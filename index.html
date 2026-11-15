@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>طلب سيرة ذاتية احترافية</title>
+<meta name="description" content="املأ بياناتك خطوة بخطوة لنكتب لك سيرة ذاتية احترافية متوافقة مع أنظمة الفلترة العالمية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0C56A5; --blue-2:#4D9ACA; --blue-soft:#EAF3FB; --ink:#1F2A37; --muted:#5B6675;
+    --line:#DCE3EA; --bg:#F4F8FC; --card:#FFFFFF; --ok:#1E8E3E; --warn:#B26A00; --warn-bg:#FFF6E5;
+    --wa:#25D366; --wa-dark:#128C7E; --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:"Cairo",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px}
+  .wrap{max-width:640px;margin:0 auto;padding:16px 16px 120px}
+  header.top{display:flex;align-items:center;gap:10px;margin:6px 0 14px}
+  .logo{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px;flex:none}
+  header.top h1{font-size:18px;margin:0;font-weight:800}
+  header.top p{margin:0;color:var(--muted);font-size:13px}
+  .progress{height:6px;background:#E3EAF2;border-radius:99px;overflow:hidden;margin:4px 0 6px}
+  .progress > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue-2),var(--blue));transition:width .3s}
+  .stepinfo{font-size:13px;color:var(--muted);margin-bottom:12px;min-height:1.7em}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:0 2px 10px rgba(16,40,70,.05)}
+  .card h2{font-size:21px;margin:0 0 6px;font-weight:800;color:var(--blue)}
+  .card .lead{margin:0 0 16px;color:var(--muted)}
+  label.f{display:block;font-weight:700;margin:14px 0 6px;font-size:15px}
+  label.f small{font-weight:400;color:var(--muted)}
+  input[type=text],input[type=email],input[type=tel],select,textarea{
+    width:100%;font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);outline:none;transition:border-color .15s}
+  input:focus,select:focus,textarea:focus{border-color:var(--blue-2);box-shadow:0 0 0 3px rgba(77,154,202,.15)}
+  input.ltr{direction:ltr;text-align:right}
+  textarea{min-height:130px;resize:vertical}
+  .hint{font-size:13.5px;color:var(--muted);margin-top:6px}
+  .example{background:var(--blue-soft);border-right:4px solid var(--blue-2);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;white-space:pre-line}
+  .example b{color:var(--blue)}
+  .warn{background:var(--warn-bg);color:var(--warn);border-radius:10px;padding:9px 12px;margin-top:8px;font-size:14px;display:none}
+  .err{color:#C62828;font-size:14px;margin-top:6px;display:none}
+  .options{display:grid;gap:10px}
+  .opt{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;transition:border-color .15s,background .15s}
+  .opt input{margin-top:6px;width:18px;height:18px;accent-color:var(--blue);flex:none}
+  .opt .t{font-weight:700}
+  .opt .p{color:var(--blue);font-weight:800;margin-inline-start:auto;text-align:center;line-height:1.3;font-size:18px}
+  .opt .d{font-size:13.5px;color:var(--muted)}
+  .opt:has(input:checked){border-color:var(--blue);background:var(--blue-soft)}
+  .entry{border:1.5px dashed var(--line);border-radius:12px;padding:12px 14px 14px;margin:12px 0;position:relative;background:#FCFDFE}
+  .entry .eh{display:flex;justify-content:space-between;align-items:center;font-weight:700;color:var(--blue)}
+  .entry .rm{background:none;border:none;color:#C62828;font:inherit;font-size:14px;cursor:pointer;padding:4px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media (max-width:420px){.row2{grid-template-columns:1fr}}
+  .chk{display:flex;gap:8px;align-items:center;margin-top:10px;font-size:15px;cursor:pointer}
+  .chk input{width:18px;height:18px;accent-color:var(--blue)}
+  .add{width:100%;background:#fff;border:1.5px dashed var(--blue-2);color:var(--blue);font:inherit;font-weight:700;padding:10px;border-radius:10px;cursor:pointer;margin-top:4px}
+  .add:hover{background:var(--blue-soft)}
+  ul.info{padding-inline-start:20px;margin:8px 0}
+  ul.info li{margin:4px 0}
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+  .price{border:1.5px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+  .price .n{font-size:22px;font-weight:800;color:var(--blue)}
+  .price .n{line-height:1.3}
+  .price .cur{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:4px}
+  .price .l{font-size:14px;color:var(--muted)}
+  .price.rec{border-color:var(--blue-2);background:var(--blue-soft)}
+  .badge{display:inline-block;background:var(--blue);color:#fff;border-radius:99px;font-size:12px;padding:0 10px;margin-bottom:4px}
+  .note{background:#F7F9FB;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:14.5px}
+  .nav{position:fixed;inset-inline:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+  .nav .in{max-width:640px;margin:0 auto;display:flex;gap:10px}
+  .btn{flex:1;font:inherit;font-weight:700;font-size:16px;border-radius:12px;padding:12px;border:none;cursor:pointer}
+  .btn.pri{background:var(--blue);color:#fff}
+  .btn.pri:hover{background:#0A4A8F}
+  .btn.sec{background:#EEF2F6;color:var(--ink);flex:0 0 32%}
+  .btn.wa{background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;gap:8px}
+  .btn.wa:hover{background:var(--wa-dark)}
+  .btn[hidden]{display:none}
+  .review h3{font-size:16px;color:var(--blue);margin:16px 0 4px;display:flex;justify-content:space-between;align-items:center}
+  .review h3 button{font:inherit;font-size:13px;background:none;border:1px solid var(--line);border-radius:8px;padding:0 10px;cursor:pointer;color:var(--muted)}
+  .review pre{white-space:pre-wrap;font-family:inherit;margin:0;background:#F7F9FB;border-radius:10px;padding:10px 12px;font-size:14.5px}
+  .review .empty{color:#C62828}
+  .send-box{margin-top:18px;display:grid;gap:10px}
+  .copy{font:inherit;font-weight:700;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px;cursor:pointer}
+  .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#1F2A37;color:#fff;padding:8px 16px;border-radius:99px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+  .toast.on{opacity:1}
+  .done-ic{width:64px;height:64px;border-radius:50%;background:#E7F6EC;color:var(--ok);display:grid;place-items:center;font-size:34px;margin:6px auto 10px}
+  .center{text-align:center}
+  .saved{font-size:12.5px;color:var(--muted);text-align:center;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo">CV</div>
+    <div>
+      <h1>طلب سيرة ذاتية احترافية</h1>
+      <p>متوافقة مع أنظمة الفلترة العالمية (ATS)</p>
+    </div>
+  </header>
+  <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+  <div class="stepinfo" id="stepinfo"></div>
+  <main id="app" class="card" aria-live="polite"></main>
+  <div class="saved">تُحفظ إجاباتك تلقائياً على جهازك، ويمكنك إكمالها لاحقاً من الرابط نفسه.</div>
+</div>
+
+<nav class="nav">
+  <div class="in">
+    <button class="btn sec" id="back" type="button">السابق</button>
+    <button class="btn pri" id="next" type="button">التالي</button>
+  </div>
+</nav>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===================== الإعدادات ===================== */
+// رقم واتساب الذي تصل إليه البيانات، بالصيغة الدولية بدون + أو 00، مثال: 963912345678
+// إذا تُرك فارغاً يفتح واتساب ويطلب من الزبون اختيار المحادثة.
+const WHATSAPP_NUMBER = "";
+const CURRENCY = "ليرة سورية جديدة";
+const PRICE_EN_N = "850", PRICE_BOTH_N = "1250";
+const PRICE_EN = `${PRICE_EN_N} ${CURRENCY}`;
+const PRICE_BOTH = `${PRICE_BOTH_N} ${CURRENCY}`;
+const STORE_KEY = "cv-request-v1";
+
+/* ===================== الحالة ===================== */
+const blank = () => ({
+  lang: "", nameAr: "", nameEn: "", dob: "", phone: "", city: "", email: "",
+  edu: [{ major: "", uni: "", year: "" }],
+  noJobs: false,
+  jobs: [{ title: "", company: "", start: "", end: "", current: false, tasks: "", ref: "" }],
+  courses: [{ name: "", org: "", year: "" }],
+  skills: "",
+  langs: [{ name: "الإنجليزية", level: "" }],
+  notes: "", photo: false
+});
+let S = load();
+let step = 0;
+
+function load(){
+  try { const s = JSON.parse(localStorage.getItem(STORE_KEY)); if (s && typeof s === "object") return Object.assign(blank(), s); } catch(e){}
+  return blank();
+}
+function save(){ try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch(e){} }
+
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("on"); setTimeout(()=>t.classList.remove("on"),1800); }
+
+/* ===================== الخطوات ===================== */
+const steps = [
+  { id:"welcome", title:"أهلاً بك", render: () => `
+    <h2>أهلاً بك 👋</h2>
+    <p class="lead">من خلال هذه الصفحة تملأ بياناتك خطوة بخطوة، وفي النهاية تُرسَل إليّ كاملةً عبر واتساب بضغطة زر.</p>
+    <b>الأسعار</b>
+    <div class="price-grid">
+      <div class="price rec"><span class="badge">ننصح بها</span><div class="n">${PRICE_EN_N}</div><div class="cur">${CURRENCY}</div><div class="l">اللغة الإنجليزية</div></div>
+      <div class="price"><div class="n">${PRICE_BOTH_N}</div><div class="cur">${CURRENCY}</div><div class="l">لغتان: العربية والإنجليزية</div></div>
+    </div>
+    <p class="hint" style="margin-top:-4px">ننصح بالإنجليزية، إلا إذا كانت الجهة التي تتقدم إليها تطلب العربية حصراً، فنكتب عندها اللغتين.</p>
+    <b>كيف نعمل؟</b>
+    <ul class="info">
+      <li>ترسل إليّ المعلومات المطلوبة من خلال هذه الصفحة.</li>
+      <li>أكتب لك السيرة الذاتية وأسلّمك إياها ملف PDF متوافقاً مع أنظمة الفلترة العالمية للسير الذاتية.</li>
+    </ul>
+    <b>مدة التسليم</b>
+    <p style="margin:6px 0">تختلف حسب كمية المعلومات وعدد اللغات المطلوبة ووجود طلبات سابقة، ولا تقل عن <b>24 ساعة للغة الواحدة</b>. نرجو عدم طلب السيرة الذاتية خلال ساعة، فالعمل الدقيق يحتاج إلى وقت.</p>
+    <div class="note">
+      كلما كانت إجاباتك دقيقة ومفصّلة كانت سيرتك الذاتية أكثر احترافية ودقة. خذ وقتك الكامل في القراءة والكتابة والمراجعة، وستجد أمثلة توضيحية تحت كل سؤال. وإذا احتجت إلى أي توضيح فسأتواصل معك.
+    </div>`
+  },
+  { id:"lang", title:"اللغة المطلوبة", render: () => `
+    <h2>بأي لغة تريد سيرتك الذاتية؟</h2>
+    <p class="lead">ننصح بالإنجليزية، إلا إذا كانت الجهة تطلب العربية حصراً.</p>
+    <div class="options">
+      ${opt("lang","en","اللغة الإنجليزية", PRICE_EN_N, "مناسبة لمعظم الشركات والمنظمات وأنظمة الفلترة")}
+      ${opt("lang","both","العربية والإنجليزية", PRICE_BOTH_N, "عندما تطلب الجهة نسخة عربية أيضاً")}
+    </div>
+    <div class="err" id="e-lang">اختر اللغة المطلوبة.</div>`,
+    validate: () => S.lang ? true : (show("e-lang"), false)
+  },
+  { id:"name", title:"الاسم", render: () => `
+    <h2>الاسم والكنية</h2>
+    <label class="f" for="nameAr">الاسم والكنية بالعربية</label>
+    <input type="text" id="nameAr" data-k="nameAr" value="${esc(S.nameAr)}" placeholder="مثال: سامي حداد" autocomplete="name">
+    <label class="f" for="nameEn">الاسم والكنية بالإنجليزية <small>(كما في جواز السفر إن وُجد)</small></label>
+    <input type="text" id="nameEn" class="ltr" dir="ltr" data-k="nameEn" value="${esc(S.nameEn)}" placeholder="Sami Haddad">
+    <div class="err" id="e-name">اكتب الاسم بالعربية والإنجليزية.</div>`,
+    validate: () => (S.nameAr.trim() && S.nameEn.trim()) ? true : (show("e-name"), false)
+  },
+  { id:"personal", title:"المعلومات الشخصية", render: () => `
+    <h2>معلومات التواصل</h2>
+    <label class="f" for="dob">تاريخ الميلاد <small>(السنة تكفي)</small></label>
+    <input type="text" id="dob" data-k="dob" value="${esc(S.dob)}" placeholder="مثال: 1998 أو 14/03/1998" inputmode="numeric">
+    <label class="f" for="phone">رقم التواصل</label>
+    <input type="tel" id="phone" class="ltr" dir="ltr" data-k="phone" value="${esc(S.phone)}" placeholder="+963 9XX XXX XXX">
+    <label class="f" for="city">مكان الإقامة <small>(المدينة والبلد)</small></label>
+    <input type="text" id="city" data-k="city" value="${esc(S.city)}" placeholder="مثال: دير عطية، سوريا">
+    <label class="f" for="email">البريد الإلكتروني الرسمي</label>
+    <input type="email" id="email" class="ltr" dir="ltr" data-k="email" value="${esc(S.email)}" placeholder="name.surname@gmail.com">
+    <div class="hint">يُفضَّل أن يكون مبنياً على اسمك، ولا يحتوي على كلمات مثل soso أو love.</div>
+    <div class="warn" id="w-email">يبدو أن هذا البريد غير رسمي. يُفضَّل استخدام بريد مبني على اسمك، أو إنشاء بريد جديد للعمل.</div>
+    <div class="err" id="e-personal">رقم التواصل ومكان الإقامة والبريد الإلكتروني مطلوبة.</div>`,
+    after: () => { checkEmail(); $("#email").addEventListener("input", checkEmail); },
+    validate: () => {
+      const okMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(S.email.trim());
+      if (!S.phone.trim() || !S.city.trim() || !okMail){ show("e-personal"); return false; }
+      return true;
+    }
+  },
+  { id:"edu", title:"الدراسة", render: () => `
+    <h2>ماذا درست؟</h2>
+    <p class="lead">الاختصاص، واسم الجامعة أو المعهد، وسنة التخرج. أضف كل شهادة على حدة.</p>
+    <div class="example"><b>مثال:</b> أدب إنجليزي – جامعة دمشق – 2022</div>
+    ${S.edu.map((e,i)=>`
+      <div class="entry">
+        <div class="eh">الشهادة ${i+1} ${S.edu.length>1?`<button class="rm" data-rm="edu" data-i="${i}" type="button">حذف</button>`:""}</div>
+        <label class="f">الاختصاص</label>
+        <input type="text" data-list="edu" data-i="${i}" data-f="major" value="${esc(e.major)}" placeholder="مثال: أدب إنجليزي، صيدلة، محاسبة">
+        <label class="f">الجامعة أو المعهد</label>
+        <input type="text" data-list="edu" data-i="${i}" data-f="uni" value="${esc(e.uni)}" placeholder="مثال: جامعة دمشق">
+        <label class="f">سنة التخرج <small>(أو «ما زلت أدرس»)</small></label>
+        <input type="text" data-list="edu" data-i="${i}" data-f="year" value="${esc(e.year)}" placeholder="مثال: 2022">
+      </div>`).join("")}
+    <button class="add" data-add="edu" type="button">+ إضافة شهادة أخرى</button>`
+  },
+  { id:"jobs", title:"الخبرات العملية", render: () => `
+    <h2>الخبرات العملية</h2>
+    <p class="lead">أضف كل عمل على حدة: المسمى، وجهة العمل، وتاريخ البداية والنهاية، والمهام. واكتب رقم أو بريد شخص يمكنه تأكيد عملك.</p>
+    <div class="example"><b>مثال:</b>
+مبرمج – شركة مايكروسوفت – 2016 إلى 2020
+- صمّمتُ أكثر من 20 صفحة لمجموعة من المدونات.
+- برمجتُ أكثر من 30 موقعاً إلكترونياً في مجالات مختلفة، مثل بيع الملابس والمولات والمحلات التجارية.
+مدير الشركة الأستاذ فلان: 0096399999 أو بريده الإلكتروني</div>
+    <label class="chk"><input type="checkbox" id="noJobs" ${S.noJobs?"checked":""}> ليس لديّ خبرة عملية حتى الآن</label>
+    <div id="jobsBox" ${S.noJobs?"hidden":""}>
+    ${S.jobs.map((j,i)=>`
+      <div class="entry">
+        <div class="eh">العمل ${i+1} ${S.jobs.length>1?`<button class="rm" data-rm="jobs" data-i="${i}" type="button">حذف</button>`:""}</div>
+        <label class="f">المسمى الوظيفي</label>
+        <input type="text" data-list="jobs" data-i="${i}" data-f="title" value="${esc(j.title)}" placeholder="مثال: محاسب، صيدلانية، مدرّس">
+        <label class="f">جهة العمل والمدينة</label>
+        <input type="text" data-list="jobs" data-i="${i}" data-f="company" value="${esc(j.company)}" placeholder="مثال: صيدلية الريم – دير عطية">
+        <div class="row2">
+          <div><label class="f">تاريخ البداية</label>
+            <input type="text" data-list="jobs" data-i="${i}" data-f="start" value="${esc(j.start)}" placeholder="مثال: 03/2021"></div>
+          <div><label class="f">تاريخ النهاية</label>
+            <input type="text" data-list="jobs" data-i="${i}" data-f="end" value="${esc(j.end)}" placeholder="مثال: 08/2024" ${j.current?"disabled":""}></div>
+        </div>
+        <label class="chk"><input type="checkbox" data-list="jobs" data-i="${i}" data-f="current" ${j.current?"checked":""}> ما زلت أعمل هنا</label>
+        <label class="f">المهام <small>(كل مهمة في سطر)</small></label>
+        <textarea data-list="jobs" data-i="${i}" data-f="tasks" placeholder="اكتب ماذا كنت تفعل يومياً بالتفصيل: ما المسؤوليات؟ مع من تتعامل؟ ما الأنظمة أو البرامج التي تستخدمها؟ هل لديك أرقام أو إنجازات؟">${esc(j.tasks)}</textarea>
+        <label class="f">شخص يؤكد عملك <small>(الاسم والصفة والرقم أو البريد)</small></label>
+        <input type="text" data-list="jobs" data-i="${i}" data-f="ref" value="${esc(j.ref)}" placeholder="مثال: المدير أحمد صالح 09XXXXXXXX">
+      </div>`).join("")}
+    <button class="add" data-add="jobs" type="button">+ إضافة عمل آخر</button>
+    </div>`,
+    after: () => {
+      $("#noJobs").addEventListener("change", e => { S.noJobs = e.target.checked; save(); $("#jobsBox").hidden = S.noJobs; });
+    }
+  },
+  { id:"courses", title:"الدورات", render: () => `
+    <h2>الدورات المهمة</h2>
+    <p class="lead">اكتب الدورات المهمة المتعلقة بعملك الحالي أو بالعمل الذي تتقدم إليه، والجهة التي أقامتها. لا داعي لذكر كل الدورات.</p>
+    <div class="example"><b>مثال:</b> دورة ICDL – معهد نيو هورايزن – 2019</div>
+    ${S.courses.map((c,i)=>`
+      <div class="entry">
+        <div class="eh">الدورة ${i+1} ${S.courses.length>1?`<button class="rm" data-rm="courses" data-i="${i}" type="button">حذف</button>`:""}</div>
+        <label class="f">اسم الدورة</label>
+        <input type="text" data-list="courses" data-i="${i}" data-f="name" value="${esc(c.name)}" placeholder="مثال: إدارة المشاريع">
+        <div class="row2">
+          <div><label class="f">الجهة</label>
+            <input type="text" data-list="courses" data-i="${i}" data-f="org" value="${esc(c.org)}" placeholder="مثال: الهلال الأحمر"></div>
+          <div><label class="f">السنة <small>(اختياري)</small></label>
+            <input type="text" data-list="courses" data-i="${i}" data-f="year" value="${esc(c.year)}" placeholder="2023"></div>
+        </div>
+      </div>`).join("")}
+    <button class="add" data-add="courses" type="button">+ إضافة دورة أخرى</button>
+    <p class="hint">إذا لم تكن لديك دورات، اترك الحقول فارغة وانتقل إلى الخطوة التالية.</p>`
+  },
+  { id:"skills", title:"المهارات", render: () => `
+    <h2>المهارات</h2>
+    <p class="lead">اكتب مهاراتك بشكل عام: الشخصية (مثل تحمّل ضغط العمل) والعملية (مثل مهارات الحاسوب ومايكروسوفت أوفيس والبرامج التي تتقنها).</p>
+    <div class="example"><b>مثال:</b> العمل تحت الضغط، العمل ضمن فريق، مايكروسوفت أوفيس، إكسل، خدمة العملاء</div>
+    <textarea data-k="skills" placeholder="اكتب مهاراتك هنا…">${esc(S.skills)}</textarea>
+    <p class="hint">سأضيف بنفسي المهارات الأساسية التي يُفترض وجودها في كل سيرة ذاتية إن لم تذكرها.</p>`
+  },
+  { id:"langs", title:"اللغات", render: () => `
+    <h2>اللغات</h2>
+    <p class="lead">العربية هي اللغة الأم. أضف اللغات الأخرى التي تعرفها ومستواك فيها.</p>
+    <div class="entry"><div class="eh">العربية</div><div class="hint" style="margin:0">اللغة الأم</div></div>
+    ${S.langs.map((l,i)=>`
+      <div class="entry">
+        <div class="eh">لغة أخرى ${i+1} ${S.langs.length>1?`<button class="rm" data-rm="langs" data-i="${i}" type="button">حذف</button>`:""}</div>
+        <div class="row2">
+          <div><label class="f">اللغة</label>
+            <input type="text" data-list="langs" data-i="${i}" data-f="name" value="${esc(l.name)}" placeholder="مثال: الإنجليزية"></div>
+          <div><label class="f">المستوى</label>
+            <select data-list="langs" data-i="${i}" data-f="level">
+              ${["","مبتدئ","متوسط","جيد","جيد جداً","ممتاز","طلِق"].map(v=>`<option value="${v}" ${l.level===v?"selected":""}>${v||"اختر المستوى"}</option>`).join("")}
+            </select></div>
+        </div>
+      </div>`).join("")}
+    <button class="add" data-add="langs" type="button">+ إضافة لغة أخرى</button>`
+  },
+  { id:"photo", title:"الصورة", render: () => `
+    <h2>الصورة الشخصية</h2>
+    <p class="lead">أرسل صورة بدقة عالية على واتساب بعد إرسال هذه البيانات.</p>
+    <ul class="info">
+      <li><b>ليست صورة سيلفي:</b> صورة التقطها لك شخص آخر بالكاميرا الخلفية للموبايل.</li>
+      <li><b>أرسلها كملف</b> وليس كصورة عادية، حتى لا تنخفض جودتها: في واتساب اختر «مستند» ثم اختر الصورة.</li>
+      <li>يُفضَّل أن تكون بخلفية بسيطة ولباس رسمي أو مرتب.</li>
+    </ul>
+    <label class="chk"><input type="checkbox" data-k="photo" ${S.photo?"checked":""}> فهمت، سأرسل الصورة كملف على واتساب</label>
+    <label class="f" for="notes" style="margin-top:20px">ملاحظات إضافية <small>(اختياري)</small></label>
+    <textarea id="notes" data-k="notes" style="min-height:90px" placeholder="مثال: الوظيفة أو الجهة التي ستتقدم إليها، أو أي معلومة تريد إضافتها.">${esc(S.notes)}</textarea>`
+  },
+  { id:"review", title:"المراجعة والإرسال", render: () => reviewHTML(), after: bindReview }
+];
+
+/* ===================== أدوات العرض ===================== */
+function opt(k, v, t, p, d){
+  return `<label class="opt"><input type="radio" name="${k}" value="${v}" data-k="${k}" ${S[k]===v?"checked":""}>
+    <div><div class="t">${t}</div><div class="d">${d}</div></div><div class="p">${p}<div style="font-size:11px;font-weight:600">${CURRENCY}</div></div></label>`;
+}
+function scrollToEl(e){ const y = e.getBoundingClientRect().top + window.scrollY - window.innerHeight/2; window.scrollTo({top:Math.max(0,y), left:0, behavior:"smooth"}); }
+function show(id){ const e=document.getElementById(id); if(e){ e.style.display="block"; scrollToEl(e); } }
+function checkEmail(){
+  const v = (S.email||"").toLowerCase();
+  const bad = /(love|soso|lolo|princ|baby|cute|angel|queen|king|devil|sweet|7ob|habibi|crazy|boss|star)/.test(v);
+  const w = $("#w-email"); if (w) w.style.display = bad ? "block" : "none";
+}
+
+/* ===================== الرسالة ===================== */
+function lines(t){ return String(t||"").split(/\n+/).map(s=>s.trim()).filter(Boolean); }
+function buildMessage(){
+  const L = [];
+  const langLabel = S.lang==="both" ? `العربية والإنجليزية (${PRICE_BOTH})` : S.lang==="en" ? `الإنجليزية (${PRICE_EN})` : "—";
+  L.push("*طلب سيرة ذاتية*");
+  L.push(`اللغة المطلوبة: ${langLabel}`);
+  L.push("");
+  L.push("*المعلومات الشخصية*");
+  L.push(`الاسم بالعربية: ${S.nameAr||"—"}`);
+  L.push(`الاسم بالإنجليزية: ${S.nameEn||"—"}`);
+  L.push(`تاريخ الميلاد: ${S.dob||"—"}`);
+  L.push(`رقم التواصل: ${S.phone ? "⁦" + S.phone + "⁩" : "—"}`);
+  L.push(`مكان الإقامة: ${S.city||"—"}`);
+  L.push(`البريد الإلكتروني: ${S.email ? "⁦" + S.email + "⁩" : "—"}`);
+  L.push("");
+  L.push("*الدراسة*");
+  const edu = S.edu.filter(e=>e.major||e.uni||e.year);
+  if (!edu.length) L.push("—");
+  edu.forEach((e,i)=>L.push(`${i+1}. ${[e.major,e.uni,e.year].filter(Boolean).join(" – ")}`));
+  L.push("");
+  L.push("*الخبرات العملية*");
+  const jobs = S.jobs.filter(j=>j.title||j.company||j.tasks);
+  if (S.noJobs || !jobs.length) L.push("لا توجد خبرة عملية");
+  else jobs.forEach((j,i)=>{
+    const end = j.current ? "حتى الآن" : (j.end||"؟");
+    L.push(`${i+1}. ${j.title||"—"} – ${j.company||"—"} (${j.start||"؟"} – ${end})`);
+    lines(j.tasks).forEach(t=>L.push(`- ${t.replace(/^[-•*]\s*/,"")}`));
+    if (j.ref) L.push(`للتأكيد: ${j.ref}`);
+    L.push("");
+  });
+  if (L[L.length-1] !== "") L.push("");
+  L.push("*الدورات*");
+  const cs = S.courses.filter(c=>c.name);
+  if (!cs.length) L.push("—");
+  cs.forEach((c,i)=>L.push(`${i+1}. ${[c.name,c.org,c.year].filter(Boolean).join(" – ")}`));
+  L.push("");
+  L.push("*المهارات*");
+  L.push(S.skills.trim() || "—");
+  L.push("");
+  L.push("*اللغات*");
+  L.push("العربية: اللغة الأم");
+  S.langs.filter(l=>l.name).forEach(l=>L.push(`${l.name}: ${l.level||"—"}`));
+  if (S.notes.trim()){ L.push(""); L.push("*ملاحظات*"); L.push(S.notes.trim()); }
+  L.push("");
+  L.push("📎 سأرسل الصورة الشخصية كملف.");
+  return L.join("\n");
+}
+function sections(){
+  const msg = buildMessage();
+  // split by bold headers for the review screen
+  const parts = msg.split(/\n(?=\*)/);
+  return parts;
+}
+const jumpMap = {"المعلومات الشخصية":"name","الدراسة":"edu","الخبرات العملية":"jobs","الدورات":"courses","المهارات":"skills","اللغات":"langs","ملاحظات":"photo","طلب سيرة ذاتية":"lang"};
+function reviewHTML(){
+  const parts = sections();
+  return `
+    <h2>راجع بياناتك</h2>
+    <p class="lead">${String(WHATSAPP_NUMBER).replace(/\D/g,"")
+      ? "تأكد من أن كل شيء صحيح وكامل، ثم اضغط زر الإرسال. ستُفتح محادثة واتساب والرسالة جاهزة، وما عليك إلا الضغط على إرسال."
+      : "تأكد من أن كل شيء صحيح وكامل، ثم اضغط زر الإرسال. سيُفتح واتساب والرسالة جاهزة: اختر محادثتي (الرقم الذي أرسل إليك هذا الرابط) ثم اضغط إرسال."}</p>
+    <div class="review">
+      ${parts.map(p=>{
+        const m = p.match(/^\*(.+?)\*\n?([\s\S]*)$/);
+        if(!m) return "";
+        const head = m[1], body = m[2].trim();
+        const target = jumpMap[head];
+        return `<h3>${esc(head)} ${target?`<button type="button" data-jump="${target}">تعديل</button>`:""}</h3><pre>${esc(body).replace(/—/g,'<span class="empty">لم يُكتب</span>')}</pre>`;
+      }).join("")}
+    </div>
+    <div class="send-box">
+      <button class="btn wa" id="sendWa" type="button">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 15.1 3.6 13.6 3.6 12 3.6 7.4 7.4 3.6 12 3.6S20.4 7.4 20.4 12 16.6 20.2 12 20.2z"/></svg>
+        إرسال البيانات عبر واتساب
+      </button>
+      <button class="copy" id="copyMsg" type="button">نسخ البيانات (إذا لم تُفتح الرسالة كاملة)</button>
+      <p class="hint center">بعد الإرسال لا تنسَ إرسال صورتك كملف في المحادثة نفسها.</p>
+    </div>`;
+}
+function bindReview(){
+  document.querySelectorAll("[data-jump]").forEach(b=>b.addEventListener("click",()=>{
+    go(steps.findIndex(s=>s.id===b.dataset.jump));
+  }));
+  $("#sendWa").addEventListener("click", ()=>{
+    const num = String(WHATSAPP_NUMBER).replace(/\D/g, "");
+    const url = `https://wa.me/${num}?text=${encodeURIComponent(buildMessage())}`;
+    if (!num) toast("اختر محادثتي من قائمة واتساب ثم اضغط إرسال");
+    window.open(url, "_blank", "noopener");
+  });
+  $("#copyMsg").addEventListener("click", async ()=>{
+    const text = buildMessage();
+    try { await navigator.clipboard.writeText(text); toast("تم النسخ ✓ الصقه في محادثة واتساب"); }
+    catch(e){
+      const ta=document.createElement("textarea"); ta.value=text; document.body.appendChild(ta); ta.select();
+      try{ document.execCommand("copy"); toast("تم النسخ ✓"); }catch(_){ toast("تعذّر النسخ"); }
+      ta.remove();
+    }
+  });
+}
+
+/* ===================== التنقل والربط ===================== */
+function render(){
+  const s = steps[step];
+  $("#app").innerHTML = s.render();
+  const n = steps.length - 1;
+  $("#bar").style.width = `${Math.round(step / n * 100)}%`;
+  $("#stepinfo").textContent = step === 0 ? "" : `الخطوة ${step} من ${n - 1} · ${s.title}`;
+  if (s.id === "review") $("#stepinfo").textContent = "الخطوة الأخيرة · المراجعة والإرسال";
+  $("#back").hidden = step === 0;
+  $("#next").hidden = s.id === "review";
+  $("#next").textContent = step === 0 ? "ابدأ" : (steps[step+1]?.id === "review" ? "مراجعة البيانات" : "التالي");
+  bind();
+  s.after && s.after();
+  window.scrollTo({top:0,left:0,behavior:"smooth"});
+}
+function bind(){
+  const app = $("#app");
+  app.querySelectorAll("[data-k]").forEach(el=>{
+    const k = el.dataset.k;
+    const ev = (el.type==="radio"||el.type==="checkbox"||el.tagName==="SELECT") ? "change" : "input";
+    el.addEventListener(ev, ()=>{
+      if (el.type==="checkbox") S[k]=el.checked;
+      else if (el.type==="radio"){ if(el.checked) S[k]=el.value; }
+      else S[k]=el.value;
+      save(); app.querySelectorAll(".err").forEach(e=>e.style.display="none");
+    });
+  });
+  app.querySelectorAll("[data-list]").forEach(el=>{
+    const {list,i,f} = el.dataset;
+    const ev = (el.type==="checkbox"||el.tagName==="SELECT") ? "change" : "input";
+    el.addEventListener(ev, ()=>{
+      S[list][+i][f] = el.type==="checkbox" ? el.checked : el.value;
+      if (list==="jobs" && f==="current"){
+        const end = app.querySelector(`[data-list="jobs"][data-i="${i}"][data-f="end"]`);
+        end.disabled = el.checked; if (el.checked){ end.value=""; S.jobs[+i].end=""; }
+      }
+      save();
+    });
+  });
+  app.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{
+    const k=b.dataset.add, tpl=blank()[k][0];
+    if (k==="langs") tpl.name="";
+    S[k].push(tpl); save(); render();
+    const last=[...app.querySelectorAll(".entry")].pop(); last && scrollToEl(last);
+  }));
+  app.querySelectorAll("[data-rm]").forEach(b=>b.addEventListener("click",()=>{
+    S[b.dataset.rm].splice(+b.dataset.i,1); save(); render();
+  }));
+}
+function go(i){ step = Math.max(0, Math.min(steps.length-1, i)); render(); }
+$("#next").addEventListener("click", ()=>{
+  const s = steps[step];
+  if (s.validate && !s.validate()) return;
+  go(step+1);
+});
+$("#back").addEventListener("click", ()=>go(step-1));
+render();
+</script>
+</body>
+</html>
