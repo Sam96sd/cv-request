@@ -125,7 +125,7 @@ const STORE_KEY = "cv-request-v1";
 
 /* ===================== الحالة ===================== */
 const blank = () => ({
-  lang: "", nameAr: "", nameEn: "", dob: "", phone: "", city: "", email: "",
+  lang: "both", nameAr: "", nameEn: "", dob: "", phone: "", city: "", email: "",
   edu: [{ major: "", uni: "", year: "" }],
   noJobs: false,
   jobs: [{ title: "", company: "", start: "", end: "", current: false, tasks: "", ref: "" }],
@@ -154,10 +154,10 @@ const steps = [
     <p class="lead">من خلال هذه الصفحة تملأ بياناتك خطوة بخطوة، وفي النهاية تُرسَل إليّ كاملةً عبر واتساب بضغطة زر.</p>
     <b>الأسعار</b>
     <div class="price-grid">
-      <div class="price rec"><span class="badge">ننصح بها</span><div class="n">${PRICE_EN_N}</div><div class="cur">${CURRENCY}</div><div class="l">اللغة الإنجليزية</div></div>
-      <div class="price"><div class="n">${PRICE_BOTH_N}</div><div class="cur">${CURRENCY}</div><div class="l">لغتان: العربية والإنجليزية</div></div>
+      <div class="price rec"><span class="badge">الأكثر طلباً</span><div class="n">${PRICE_BOTH_N}</div><div class="cur">${CURRENCY}</div><div class="l">نسختان: العربية والإنجليزية</div></div>
+      <div class="price"><div class="n">${PRICE_EN_N}</div><div class="cur">${CURRENCY}</div><div class="l">نسخة إنجليزية فقط</div></div>
     </div>
-    <p class="hint" style="margin-top:-4px">ننصح بالإنجليزية، إلا إذا كانت الجهة التي تتقدم إليها تطلب العربية حصراً، فنكتب عندها اللغتين.</p>
+    <p class="hint" style="margin-top:-4px">مع النسختين تكون جاهزاً لأي جهة، سواء طلبت سيرة ذاتية بالعربية أو بالإنجليزية.</p>
     <b>كيف نعمل؟</b>
     <ul class="info">
       <li>ترسل إليّ المعلومات المطلوبة من خلال هذه الصفحة.</li>
@@ -171,10 +171,10 @@ const steps = [
   },
   { id:"lang", title:"اللغة المطلوبة", render: () => `
     <h2>بأي لغة تريد سيرتك الذاتية؟</h2>
-    <p class="lead">ننصح بالإنجليزية، إلا إذا كانت الجهة تطلب العربية حصراً.</p>
+    <p class="lead">مع النسختين تكون جاهزاً لأي فرصة، لأن بعض الجهات تطلب العربية وبعضها الإنجليزية.</p>
     <div class="options">
-      ${opt("lang","en","اللغة الإنجليزية", PRICE_EN_N, "مناسبة لمعظم الشركات والمنظمات وأنظمة الفلترة")}
-      ${opt("lang","both","العربية والإنجليزية", PRICE_BOTH_N, "عندما تطلب الجهة نسخة عربية أيضاً")}
+      ${opt("lang","both","العربية والإنجليزية (الأكثر طلباً)", PRICE_BOTH_N, "نسختان جاهزتان للتقديم على أي جهة")}
+      ${opt("lang","en","الإنجليزية فقط", PRICE_EN_N, "نسخة واحدة باللغة الإنجليزية")}
     </div>
     <div class="err" id="e-lang">اختر اللغة المطلوبة.</div>`,
     validate: () => S.lang ? true : (show("e-lang"), false)
